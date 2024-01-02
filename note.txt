@@ -1,0 +1,21 @@
+
+DB:cloudSQL(存一般文件), cloud storage(存PDF)
+PostgreSQL 執行個體
+ID:professor-x
+password:professor2117
+部署:GCP
+
+建立django資料夾
+建立react資料夾
+startapp aiscribe
+設定settings,urls
+設定資料庫
+
+--2024/1/2
+Kubernetes Engine 專案 ID: decoded-cove-409708
+Cloud SQL instance 私人 IP 位址 10.119.160.3
+預約靜態 IP 位置web-server-ip-address	35.244.135.229
+啟用 Container Registry API
+建立 service-account（服務帳戶）
+建立 Cloud Storage bucket: professor-bucket
+
