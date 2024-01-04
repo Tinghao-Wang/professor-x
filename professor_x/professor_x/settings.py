@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,11 +82,11 @@ WSGI_APPLICATION = "professor_x.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',  # Cloud SQL 的資料庫名稱
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'professorDB',  # Cloud SQL 的資料庫名稱
         'USER': 'professor-x',  # 資料庫用戶名
         'PASSWORD': 'professor2117',  # 資料庫密碼
-        'HOST': '34.80.63.85',  # Cloud SQL 實例的公共 IP 地址
+        'HOST': '10.119.160.3',  # Cloud SQL 實例的私人 IP 地址
         'PORT': '5432',  # 預設 PostgreSQL 端口
     }
 }
@@ -127,6 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

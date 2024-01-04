@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata:
+      labels:
+        app: django
+    spec:
+      containers:
+      - name: django
+        image: asia.gcr.io/decoded-cove-409708/server # 使用您的專案ID和映像名稱
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATABASE_HOST
+          value: "10.119.160.3" # Cloud SQL 的私人 IP
+        - name: DATABASE_USER
+          value: "professor-x" # PostgreSQL 的使用者 ID
+        - name: DATABASE_PASSWORD
+          value: "professor2117" # PostgreSQL 的密碼
+        - name: GS_BUCKET_NAME
+          value: "professor-bucket" # Google Cloud Storage bucket 名稱
+        - name: STATIC_URL
+          value: "https://professor-bucket.storage.googleapis.com/static/" # 靜態文件 URL
