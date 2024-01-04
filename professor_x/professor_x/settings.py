@@ -83,7 +83,7 @@ WSGI_APPLICATION = "professor_x.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # Cloud SQL 的資料庫名稱
+        'NAME': 'professorDB',  # Cloud SQL 的資料庫名稱
         'USER': 'professor-x',  # 資料庫用戶名
         'PASSWORD': 'professor2117',  # 資料庫密碼
         'HOST': '10.119.160.3',  # Cloud SQL 實例的私人 IP 地址
